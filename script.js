@@ -42,10 +42,37 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMessage.textContent = 'Veuillez remplir tous les champs: ' + errors.join(' ');
             errorMessage.style.display = 'block';
         } else {
-            // Si le formulaire est valide, masquer l'erreur et simuler l'envoi
+            // Si le formulaire est valide, masquer l'erreur
             errorMessage.style.display = 'none';
-            // Ici on pourrait envoyer via fetch() vers un endpoint, pour l'instant on simule
-            alert('Votre message a été envoyé avec succès ! (Simulation)');
+            errorMessage.textContent = '';
+
+            // Construire un mailto: pour ouvrir le client mail de l'utilisateur
+            const to = 'justekocou21@gmail.com';
+            const subject = `Formulaire de contact : ${sujet}`;
+            const bodyLines = [
+                `Prénom: ${prenom}`,
+                `Nom: ${nom}`,
+                `Sujet: ${sujet}`,
+                '',
+                `${message}`
+            ];
+            const body = bodyLines.join('\n');
+            const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Tenter d'ouvrir le client mail dans un nouvel onglet/fenêtre
+            const opened = window.open(mailto, '_blank');
+            if (!opened) {
+                // Fallback : créer un lien temporaire et le cliquer
+                const a = document.createElement('a');
+                a.href = mailto;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+
+            alert("Votre client mail va s'ouvrir pour envoyer le message. Vérifiez ensuite l'envoi depuis votre application mail.");
+
             // Réinitialiser le formulaire
             form.reset();
         }
