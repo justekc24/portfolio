@@ -169,7 +169,7 @@ header ul li a:hover {
     .hero-content { flex-direction: column-reverse; gap: 20px; }
     .welcome-image { flex: 0 0 auto; width: 80%; }
     .hero-text { flex: 1 1 100%; text-align: center; }
-    .welcome-image img { max-width: 100%; }
+    .welcome-image img { max-width: 90%; }
 }
 
 /* --- Section À Propos --- */
@@ -361,3 +361,4 @@ footer {
     margin: 5px 0;
 
 }
+
