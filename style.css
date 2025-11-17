@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 90%;
     
     margin: 0 auto;
 }
@@ -54,7 +54,7 @@ header {
     background-color: var(--secondary-color);
     position: sticky; /* ou fixed si souhaité */
     top: 0;
-    width: 100%;
+    width: 90%;
     z-index: 1000;
 }
 
@@ -320,7 +320,7 @@ header ul li a:hover {
 
 .contact-form input[type="text"],
 .contact-form textarea {
-    width: 100%;
+    width: 90%; 
     padding: 15px;
     margin-bottom: 20px;
     border: none;
@@ -361,4 +361,5 @@ footer {
     margin: 5px 0;
 
 }
+
 
