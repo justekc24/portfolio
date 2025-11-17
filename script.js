@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.removeChild(a);
             }
 
-            alert("Votre client mail va s'ouvrir pour envoyer le message. Vérifiez ensuite l'envoi depuis votre application mail.");
+            alert("Vérifiez  l'envoi depuis votre application mail. mail : justekocou21@gmail.com");
 
             // Réinitialiser le formulaire
             form.reset();
@@ -92,3 +92,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
