@@ -1,0 +1,362 @@
+/* Variables pour la cohérence des couleurs et typographie */
+:root {
+    --primary-color: #00bcd4; /* Accent Cyan/Vert */
+    --secondary-color: #121212; /* Texte principal sombre */
+    --light-bg: #f5f5f5; /* Fond clair pour les sections */
+    --white-bg: #ffffff; 
+    --dark-bg: #1f1f1f; /* Fond sombre pour le contact */
+    --text-light: #f5f5f5;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: var(--white-bg);
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    font-size: 2.2em;
+}
+
+.light-bg {
+    background-color: var(--light-bg);
+}
+
+.dark-bg {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--secondary-color);
+    position: sticky; /* ou fixed si souhaité */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Boutons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 25px;
+    transition: background-color 0.3s, opacity 0.3s;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    opacity: 0.8;
+}
+
+/* --- Section Hero (Accueil) --- */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* Image d'accueil : rendre l'image plus grande tout en restant responsive */
+.hero-text {
+    flex: 1 1 50%;
+}
+
+.welcome-image {
+    flex: 0 0 45%; /* réserve environ 45% de la largeur au conteneur image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-image img {
+    width: 70%;
+    height: auto;
+    max-width: 720px; /* taille maximale raisonnable sur desktop */
+    border-radius: 8px; /* optionnel : arrondir légèrement */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 900px) {
+    .welcome-image { flex: 0 0 50%; }
+    .hero-text h1 { font-size: 2.1em; }
+}
+
+@media (max-width: 768px) {
+    .hero-content { flex-direction: column-reverse; gap: 20px; }
+    .welcome-image { flex: 0 0 auto; width: 80%; }
+    .hero-text { flex: 1 1 100%; text-align: center; }
+    .welcome-image img { max-width: 90%; }
+}
+
+/* --- Section À Propos --- */
+.propos-grid {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.propos-text h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.propos-image {
+    text-align: center;
+    flex: 0 0 220px; /* réserve l'espace pour l'image */
+}
+
+.propos-text {
+    flex: 1 1 400px;
+}
+
+.propos-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    display: inline-block;
+}
+
+
+@media (max-width: 768px) {
+    .propos-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    .propos-image { margin-bottom: 18px; }
+    .propos-text { padding: 0 12px; }
+}
+
+/* --- Section Projets (Cartes) --- */
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--white-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.project-card p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.tags span {
+    display: inline-block;
+    color: var(--primary-color);
+    font-size: 0.8em;
+    padding: 4px 0;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.project-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    margin-top: 10px;
+}
+
+/* --- Section Compétences --- */
+.competences-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.skill-group {
+    background-color: var(--white-bg);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skill-group h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skill-group ul {
+    list-style-type: none;
+}
+
+.skill-group ul li {
+    padding: 5px 0;
+    color: var(--secondary-color);
+    font-size: 0.95em;
+}
+
+.progress-bar-container {
+    background-color: #ddd;
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* --- Section Contact (Formulaire) --- */
+.contact-title {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #2a2a2a;
+    color: var(--text-light);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px 30px;
+}
+
+/* Affichage des messages d'erreur JS */
+.error-text {
+    color: #ff4d4d; 
+    font-weight: bold;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: none; 
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+    color: #999;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}

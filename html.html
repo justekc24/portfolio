@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOCOU Juste - Développeur en devenir</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#accueil" class="logo">KOCOU JUSTE</a>
+            <ul>
+                <li><a href="#propos">À Propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Je suis Juste, Développeur en devenir passionné par le web et le design, Data Analyste junior et IoT !</h1>
+                <a href="#projets" class="btn primary-btn">Voir mes projets</a>
+            </div>
+            <div class="welcome-image">
+                <img src="welcome-image.jpg" alt="Photo de Juste">
+            </div>
+                    </div>
+    </section>
+
+    <section id="propos" class="section-padding light-bg">
+        <h2 class="section-title">À propos</h2>
+        <div class="container propos-grid">
+            <div class="propos-text">
+                <p>Je m'appelle Juste, passionné par la création de sites web modernes et interactifs.</p>
+                <p>Je suis actuellement étudiant en Génie Electrique et Informatique , et je cherche à améliorer mes compétences en JavaScript, HTML et CSS.</p>
+                <p>Je passionné par l'innovation technologique et l'IA dont l'Iot et l'anayse de donnée.</p>
+                <p>J'adore transformer mes idées en projets concrets et expérimenter avec les nouvelles technologies.</p>
+                <a href="Juste_KOCOU_CV.pdf" class="btn secondary-btn" download>Voici mon CV</a>
+            </div>
+            <div class="propos-image">
+                <img src="self_image.jpg" alt="Photo de Juste">
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="section-padding">
+        <h2 class="section-title">Mes Projets</h2>
+        <div class="container projets-grid">
+            <article class="project-card">
+                <p>J'ai réalisé une application web Mediconnect pour permettre une interaction rapide entre patient-médecin.</p>
+                <div class="tags">
+                    <span>#html</span>
+                    <span>#css</span>
+                    <span>#js</span>
+                </div>
+                <a href="#" class="project-link">Voir</a>
+            </article>
+
+            <article class="project-card">
+                <p>Portfolio personnel professionnel.</p>
+                <div class="tags">
+                    <span>#html</span>
+                    <span>#css</span>
+                    <span>#js</span>
+                </div>
+                <a href="#" class="project-link">Voir</a>
+            </article>
+
+            <article class="project-card">
+                <p>Un Un gestionnaire de magazin avec la Programmation Orienté-Objet Python.</p>
+                <div class="tags">
+                    <span>#Python</span>
+                    <span>#Tkinter</span>
+                    <span>#POO</span>
+                </div>
+                <a href="#" class="project-link">Voir</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="competences" class="section-padding light-bg">
+        <h2 class="section-title">Mes Compétences</h2>
+        <div class="container competences-grid">
+            <div class="skill-group soft">
+                <h4>Soft Skills</h4>
+                <ul>
+                    <li>Gestion de projet</li>
+                    <li>Résolution de problème</li>
+                    <li>Adaptabilité</li>
+                </ul>
+                <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-group hard">
+                <h4>Hard Skills</h4>
+                <ul>
+                    <li>HTML        JavaScript       CSS</li>
+                    <li>PYTHON     Seaborn,Pandas    MatplotLib</li>
+                    <li>C++         Arduino          NodeRed(IoT)</li>
+                    <li>Word        Excel            PowertPoint</li>
+                </ul>
+                <div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding dark-bg">
+        <div class="container">
+            <h2 class="contact-title">Vous avez un projet en tête ? N'hésitez pas à me contacter</h2>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                </div>
+                <input type="text" id="sujet" name="sujet" placeholder="Votre sujet" required>
+                <textarea id="message" name="message" rows="8" placeholder="Votre message..." required></textarea>
+                
+                <p id="error-message" class="error-text"></p>
+
+                <button type="submit" class="btn primary-btn submit-btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>Designed by Juste with HTML CSS JS</p>
+            <p>Tous droits réservés - 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
